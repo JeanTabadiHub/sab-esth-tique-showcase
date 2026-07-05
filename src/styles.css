@@ -31,37 +31,52 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: var(--gold);
+  --color-prune: var(--prune);
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: #faf6ef;
-  --foreground: #1f1a14;
-  --card: #ffffff;
-  --card-foreground: #1f1a14;
-  --popover: #ffffff;
-  --popover-foreground: #1f1a14;
-  --primary: #8c6a3f;
-  --primary-foreground: #faf6ef;
-  --primary-glow: #b08a5c;
-  --secondary: #e4d3b0;
-  --secondary-foreground: #1f1a14;
-  --muted: #efe6d3;
-  --muted-foreground: #6b5b45;
-  --accent: #e4d3b0;
-  --accent-foreground: #1f1a14;
-  --destructive: #b3261e;
-  --destructive-foreground: #faf6ef;
-  --border: #e8dcc4;
-  --input: #e8dcc4;
-  --ring: #8c6a3f;
+  --radius: 1rem;
 
-  --shadow-soft: 0 10px 40px -18px rgba(140, 106, 63, 0.35);
-  --shadow-elegant: 0 24px 60px -24px rgba(140, 106, 63, 0.45);
-  --gradient-bronze: linear-gradient(135deg, #8c6a3f 0%, #b08a5c 100%);
-  --gradient-champagne: linear-gradient(180deg, #faf6ef 0%, #efe6d3 100%);
+  /* Rosée palette */
+  --blush: #fbeaf0;
+  --nude: #f4c0d1;
+  --rose: #d4537e;
+  --rose-soft: #e07a9e;
+  --bordeaux: #72243e;
+  --prune: #4b1528;
+  --gold: #c9a227;
+  --creme: #fff9f7;
+  --rose-line: #f0d9e1;
+
+  --background: var(--creme);
+  --foreground: var(--bordeaux);
+  --card: #ffffff;
+  --card-foreground: var(--bordeaux);
+  --popover: #ffffff;
+  --popover-foreground: var(--bordeaux);
+  --primary: var(--rose);
+  --primary-foreground: var(--creme);
+  --primary-glow: var(--rose-soft);
+  --secondary: var(--nude);
+  --secondary-foreground: var(--bordeaux);
+  --muted: var(--blush);
+  --muted-foreground: #8a5a6c;
+  --accent: var(--gold);
+  --accent-foreground: var(--prune);
+  --destructive: #b3261e;
+  --destructive-foreground: var(--creme);
+  --border: var(--rose-line);
+  --input: var(--rose-line);
+  --ring: var(--rose);
+
+  --shadow-soft: 0 8px 30px -18px rgba(114, 36, 62, 0.25);
+  --shadow-elegant: 0 24px 60px -28px rgba(114, 36, 62, 0.35);
+  --gradient-rose: linear-gradient(135deg, #d4537e 0%, #e07a9e 100%);
+  --gradient-blush: linear-gradient(180deg, #fff9f7 0%, #fbeaf0 100%);
+  --gradient-prune: linear-gradient(135deg, #4b1528 0%, #72243e 100%);
 }
 
 @layer base {
@@ -77,12 +92,25 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: -0.01em;
+    line-height: 1.15;
+    color: var(--bordeaux);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
 }

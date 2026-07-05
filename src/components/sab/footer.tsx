@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import { BRAND } from "./data";
+import logo from "@/assets/sab-logo.png.asset.json";
 
-// TikTok icon (Lucide n'en fournit pas de version épurée)
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
@@ -13,17 +13,29 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer ref={ref} className="border-t border-border/60 bg-foreground text-background/85">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <footer
+      ref={ref}
+      className="relative overflow-hidden border-t border-[var(--prune)]/40 bg-[var(--prune)] text-[var(--nude)]"
+    >
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
         <div className="grid gap-10 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-start">
           <div className="min-w-0 max-w-md">
-            <p className="font-serif text-3xl text-background">{BRAND.name}</p>
-            <p className="mt-3 text-sm leading-relaxed text-background/70">
-              Institut de beauté à Hedzranawoé, Lomé. Manucure, soins, microblading, extensions de cils et bien-être.
+            <div className="flex items-center gap-3">
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[var(--creme)] p-1.5">
+                <img src={logo.url} alt="" className="h-full w-full object-contain" />
+              </div>
+              <p className="font-serif text-3xl italic text-[var(--creme)]">
+                {BRAND.name}
+              </p>
+            </div>
+            <p className="eyebrow mt-4 text-[var(--gold)]">Beauté &amp; éclat naturel</p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--nude)]/80">
+              Institut de beauté à Hedzranawoé, Lomé. Manucure, soins, microblading,
+              extensions de cils et bien-être.
             </p>
             <a
               href={BRAND.phoneHref}
-              className="mt-4 inline-block text-sm text-background hover:text-primary-glow"
+              className="mt-5 inline-block text-sm text-[var(--creme)] underline-offset-4 hover:underline"
             >
               {BRAND.phone}
             </a>
@@ -31,48 +43,41 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           <div className="flex flex-wrap items-start gap-x-12 gap-y-8">
             <nav className="flex flex-col gap-2 text-sm">
-              <span className="mb-1 text-xs uppercase tracking-[0.2em] text-background/50">Navigation</span>
-              <a href="#prestations" className="hover:text-primary-glow">Prestations</a>
-              <a href="#avis" className="hover:text-primary-glow">Avis</a>
-              <a href="#contact" className="hover:text-primary-glow">Contact</a>
+              <span className="mb-1 text-xs uppercase tracking-[0.25em] text-[var(--gold)]">
+                Navigation
+              </span>
+              <a href="#prestations" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Prestations</a>
+              <a href="#avis" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Avis</a>
+              <a href="#contact" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Contact</a>
             </nav>
 
             <div className="flex flex-col gap-3 text-sm">
-              <span className="mb-1 text-xs uppercase tracking-[0.2em] text-background/50">Suivez-nous</span>
+              <span className="mb-1 text-xs uppercase tracking-[0.25em] text-[var(--gold)]">
+                Suivez-nous
+              </span>
               <div className="flex gap-3">
-                <a
-                  href={BRAND.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-background/20 transition hover:border-primary-glow hover:text-primary-glow"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href={BRAND.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="TikTok"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-background/20 transition hover:border-primary-glow hover:text-primary-glow"
-                >
-                  <TikTokIcon className="h-5 w-5" />
-                </a>
-                <a
-                  href={BRAND.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-background/20 transition hover:border-primary-glow hover:text-primary-glow"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
+                {[
+                  { href: BRAND.instagram, label: "Instagram", Icon: Instagram },
+                  { href: BRAND.tiktok, label: "TikTok", Icon: TikTokIcon },
+                  { href: BRAND.facebook, label: "Facebook", Icon: Facebook },
+                ].map(({ href, label, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="grid h-11 w-11 place-items-center rounded-full border border-[var(--nude)]/25 text-[var(--nude)] transition hover:border-[var(--gold)] hover:text-[var(--gold)]"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-background/10 pt-6 text-xs text-background/60">
+        <div className="mt-12 border-t border-[var(--nude)]/15 pt-6 text-xs text-[var(--nude)]/60">
           © {new Date().getFullYear()} {BRAND.name} — Tous droits réservés.
         </div>
       </div>
