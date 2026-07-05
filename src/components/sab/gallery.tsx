@@ -20,8 +20,8 @@ export function Gallery() {
     <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
         <div className="max-w-xl min-w-0">
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Galerie</span>
-          <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+          <span className="eyebrow">Galerie</span>
+          <h2 className="mt-3 font-serif text-4xl italic leading-tight text-foreground sm:text-5xl">
             Un aperçu de l'institut.
           </h2>
         </div>

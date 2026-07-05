@@ -12,8 +12,8 @@ export function Services() {
     <section id="prestations" className="bg-[var(--gradient-blush)] py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <div className="max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Nos prestations</span>
-          <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+          <span className="eyebrow">Nos prestations</span>
+          <h2 className="mt-3 font-serif text-4xl italic leading-tight text-foreground sm:text-5xl">
             Une carte complète, un soin à la fois.
           </h2>
           <p className="mt-4 text-muted-foreground">

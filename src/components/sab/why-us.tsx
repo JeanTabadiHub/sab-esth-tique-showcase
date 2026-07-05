@@ -27,8 +27,8 @@ export function WhyUs() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <div className="max-w-2xl">
-        <span className="text-xs uppercase tracking-[0.25em] text-primary">Pourquoi Sab'</span>
-        <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+        <span className="eyebrow">Pourquoi Sab'</span>
+        <h2 className="mt-3 font-serif text-4xl italic leading-tight text-foreground sm:text-5xl">
           Ce que nos clientes retiennent de nous.
         </h2>
         <p className="mt-4 text-muted-foreground">

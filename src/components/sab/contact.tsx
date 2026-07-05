@@ -7,8 +7,8 @@ export function Contact() {
     <section id="contact" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <span className="text-xs uppercase tracking-[0.25em] text-primary">Nous trouver</span>
-          <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+          <span className="eyebrow">Nous trouver</span>
+          <h2 className="mt-3 font-serif text-4xl italic leading-tight text-foreground sm:text-5xl">
             Passez nous voir.
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground">
@@ -84,7 +84,7 @@ export function Contact() {
         </div>
 
         <div className="rounded-3xl border border-border/70 bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary">Réservation</p>
+          <p className="eyebrow">Réservation</p>
           <h3 className="mt-2 font-serif text-3xl text-foreground">
             Réservez votre rendez-vous.
           </h3>

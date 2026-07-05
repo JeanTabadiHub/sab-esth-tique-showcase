@@ -23,8 +23,8 @@ export function Reviews() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0 max-w-xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-primary">Avis clients</span>
-            <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+            <span className="eyebrow">Avis clients</span>
+            <h2 className="mt-3 font-serif text-4xl italic leading-tight text-foreground sm:text-5xl">
               Ce que vous en dites.
             </h2>
           </div>
