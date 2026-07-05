@@ -17,7 +17,7 @@ export function Contact() {
 
           <div className="mt-10 space-y-6">
             <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-bronze)] text-primary-foreground">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-rose)] text-primary-foreground">
                 <MapPin className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -35,7 +35,7 @@ export function Contact() {
             </div>
 
             <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-bronze)] text-primary-foreground">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-rose)] text-primary-foreground">
                 <Phone className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -58,7 +58,7 @@ export function Contact() {
             </div>
 
             <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-bronze)] text-primary-foreground">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[var(--gradient-rose)] text-primary-foreground">
                 <Clock className="h-5 w-5" />
               </div>
               <div className="min-w-0">

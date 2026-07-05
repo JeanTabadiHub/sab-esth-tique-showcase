@@ -42,7 +42,7 @@ export function WhyUs() {
             key={title}
             className="rounded-2xl border border-border/70 bg-card p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
           >
-            <div className="grid h-12 w-12 place-items-center rounded-full bg-[var(--gradient-bronze)] text-primary-foreground">
+            <div className="grid h-12 w-12 place-items-center rounded-full bg-[var(--gradient-rose)] text-primary-foreground">
               <Icon className="h-5 w-5" />
             </div>
             <h3 className="mt-5 font-serif text-2xl text-foreground">{title}</h3>

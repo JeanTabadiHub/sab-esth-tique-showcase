@@ -9,7 +9,7 @@ export function Services() {
   const { setOpen } = useBooking();
 
   return (
-    <section id="prestations" className="bg-[var(--gradient-champagne)] py-20 sm:py-28">
+    <section id="prestations" className="bg-[var(--gradient-blush)] py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <span className="text-xs uppercase tracking-[0.25em] text-primary">Nos prestations</span>

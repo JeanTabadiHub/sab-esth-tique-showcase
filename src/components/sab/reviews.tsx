@@ -19,7 +19,7 @@ function Stars({ n }: { n: number }) {
 
 export function Reviews() {
   return (
-    <section id="avis" className="bg-[var(--gradient-champagne)] py-20 sm:py-28">
+    <section id="avis" className="bg-[var(--gradient-blush)] py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0 max-w-xl">
