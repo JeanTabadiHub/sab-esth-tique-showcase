@@ -1,35 +1,45 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale";
+import { CalendarIcon, ChevronsUpDown } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 import { SERVICES } from "./data";
 
 export function BookingForm({ onDone }: { onDone?: () => void }) {
   const [submitting, setSubmitting] = useState(false);
-  const [dateError, setDateError] = useState<string | null>(null);
+  const [date, setDate] = useState<Date | undefined>();
+  const [dateOpen, setDateOpen] = useState(false);
 
-  const handleDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
-    if (!val) return setDateError(null);
-    const d = new Date(val);
-    const day = d.getDay(); // 0 dim, 1 lun
-    if (day === 0 || day === 1) {
-      setDateError("L'institut est fermé le lundi et le dimanche.");
-    } else {
-      setDateError(null);
-    }
+  const isClosed = (d: Date) => {
+    const day = d.getDay();
+    return day === 0 || day === 1; // dim / lun
   };
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const dateError =
+    date && isClosed(date) ? "L'institut est fermé le lundi et le dimanche." : null;
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!date) {
+      toast.error("Merci de choisir une date.");
+      return;
+    }
     if (dateError) {
       toast.error(dateError);
       return;
     }
     setSubmitting(true);
-    // {/* À CONNECTER : service d'envoi (email / WhatsApp API / backend) */}
     setTimeout(() => {
       setSubmitting(false);
       toast.success("Merci ! Nous vous recontactons rapidement.");
       (e.target as HTMLFormElement).reset();
+      setDate(undefined);
       onDone?.();
     }, 700);
   };
@@ -72,18 +82,55 @@ export function BookingForm({ onDone }: { onDone?: () => void }) {
       </label>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
+        <div className="block">
           <span className="mb-1.5 block text-sm font-medium text-foreground">Date souhaitée *</span>
           <input
-            required
+            type="hidden"
             name="date"
-            type="date"
-            onChange={handleDate}
-            min={new Date().toISOString().split("T")[0]}
-            className={inputCls}
+            value={date ? format(date, "yyyy-MM-dd") : ""}
+            required
           />
+          <Popover open={dateOpen} onOpenChange={setDateOpen}>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                className={cn(
+                  inputCls,
+                  "flex items-center justify-between gap-2 text-left",
+                  !date && "text-muted-foreground/70",
+                )}
+              >
+                <span className="flex items-center gap-2">
+                  <CalendarIcon className="h-4 w-4 text-primary" />
+                  {date
+                    ? format(date, "d MMMM yyyy", { locale: fr })
+                    : "Choisir une date"}
+                </span>
+                <ChevronsUpDown className="h-4 w-4 opacity-50" />
+              </button>
+            </PopoverTrigger>
+            <PopoverContent
+              align="start"
+              sideOffset={8}
+              className="w-[calc(100vw-2rem)] max-w-[340px] rounded-2xl border-border/60 bg-card p-0 shadow-[var(--shadow-elegant)]"
+            >
+              <Calendar
+                mode="single"
+                selected={date}
+                onSelect={(d) => {
+                  setDate(d);
+                  if (d && !isClosed(d)) setDateOpen(false);
+                }}
+                locale={fr}
+                weekStartsOn={1}
+                disabled={(d) => d < today || isClosed(d)}
+                initialFocus
+                className={cn("pointer-events-auto p-3")}
+              />
+            </PopoverContent>
+          </Popover>
           {dateError && <span className="mt-1 block text-xs text-destructive">{dateError}</span>}
-        </label>
+        </div>
         <div>
           <span className="mb-1.5 block text-sm font-medium text-foreground">Créneau *</span>
           <div className="grid grid-cols-2 gap-2">
