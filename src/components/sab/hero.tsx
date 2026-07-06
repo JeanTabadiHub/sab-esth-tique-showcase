@@ -19,9 +19,9 @@ export function Hero() {
           src={heroImg}
           alt=""
           aria-hidden
-          className="h-full w-full object-cover object-center opacity-30 mix-blend-multiply"
+          className="h-full w-full object-cover object-center opacity-45"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
         {/* décorations florales douces */}
         <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-[var(--nude)]/40 blur-3xl" />
         <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[var(--blush)] blur-3xl" />
