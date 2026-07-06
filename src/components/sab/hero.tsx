@@ -21,7 +21,7 @@ export function Hero() {
           aria-hidden
           className="h-full w-full object-cover object-center opacity-45"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/25 to-background/70" />
         {/* décorations florales douces */}
         <div className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-[var(--nude)]/40 blur-3xl" />
         <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-[var(--blush)] blur-3xl" />
