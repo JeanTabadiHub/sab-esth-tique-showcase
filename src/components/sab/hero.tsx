@@ -41,7 +41,7 @@ export function Hero() {
               className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20"
             />
             <div className="min-w-0">
-              <span className="eyebrow block text-[var(--gold)]">
+              <span className="eyebrow block text-[var(--gold)] opacity-100 brightness-75 sm:brightness-100">
                 Institut de beauté · Lomé
               </span>
               <span className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -75,7 +75,7 @@ export function Hero() {
               href={BRAND.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[56px] items-center justify-center rounded-full border border-border bg-card/70 px-6 text-base font-medium text-foreground backdrop-blur transition hover:bg-card"
+              className="inline-flex min-h-[56px] items-center justify-center rounded-full border border-border bg-card/70 px-6 text-base font-medium text-foreground backdrop-blur transition hover:bg-[#25D366] hover:text-white hover:border-[#25D366]"
             >
               Écrire sur WhatsApp
             </a>

@@ -56,7 +56,7 @@ export function Contact() {
                     href={BRAND.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition"
+                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-[#25D366] transition"
                   >
                     <MessageCircle className="h-4 w-4" />
                     Écrivez-nous sur WhatsApp
