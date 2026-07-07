@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Instagram, Facebook } from "lucide-react";
 import { BRAND } from "./data";
-import logo from "@/assets/sab-logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -22,7 +22,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div className="min-w-0 max-w-md">
             <div className="flex items-center gap-3">
               <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[var(--creme)] p-1.5">
-                <img src={logo.url} alt="" className="h-full w-full object-contain" />
+                <img src={logo} alt="" className="h-full w-full object-contain" />
               </div>
               <p className="font-serif text-3xl italic text-[var(--creme)]">
                 {BRAND.name}
@@ -46,9 +46,23 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
               <span className="mb-1 text-xs uppercase tracking-[0.25em] text-[var(--gold)]">
                 Navigation
               </span>
-              <a href="#prestations" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Prestations</a>
-              <a href="#avis" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Avis</a>
-              <a href="#contact" className="text-[var(--nude)]/90 hover:text-[var(--creme)]">Contact</a>
+              {[
+                { id: "prestations", label: "Prestations" },
+                { id: "avis", label: "Avis" },
+                { id: "contact", label: "Contact" },
+              ].map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-[var(--nude)]/90 hover:text-[var(--creme)]"
+                >
+                  {label}
+                </a>
+              ))}
             </nav>
 
             <div className="flex flex-col gap-3 text-sm">

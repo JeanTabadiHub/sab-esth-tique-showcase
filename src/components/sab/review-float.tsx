@@ -28,7 +28,7 @@ export function ReviewFloat({ footerRef }: { footerRef: React.RefObject<HTMLElem
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          href={BRAND.mapsUrl}
+          href={BRAND.reviewsUrl}
           target="_blank"
           rel="noopener noreferrer"
           style={{ pointerEvents: visible ? "auto" : "none" }}

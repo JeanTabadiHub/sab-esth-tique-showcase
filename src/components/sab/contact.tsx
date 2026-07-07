@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, MessageCircle, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, MessageCircle, Navigation, Mail } from "lucide-react";
 import { BRAND, HOURS } from "./data";
 import { BookingForm } from "./booking-form";
 
@@ -19,8 +19,8 @@ export function Contact() {
             {/* Adresse */}
             <div className="group rounded-2xl border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)] transition hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]">
               <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--gradient-rose)] text-primary-foreground shadow-[var(--shadow-soft)] transition group-hover:scale-105">
-                  <MapPin className="h-5 w-5" strokeWidth={2.2} />
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary text-white shadow-md transition group-hover:scale-105">
+                  <MapPin className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-foreground">Adresse</p>
@@ -41,8 +41,8 @@ export function Contact() {
             {/* Téléphone */}
             <div className="group rounded-2xl border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)] transition hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]">
               <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--gradient-rose)] text-primary-foreground shadow-[var(--shadow-soft)] transition group-hover:scale-105">
-                  <Phone className="h-5 w-5" strokeWidth={2.2} />
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary text-white shadow-md transition group-hover:scale-105">
+                  <Phone className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-foreground">Téléphone</p>
@@ -56,10 +56,28 @@ export function Contact() {
                     href={BRAND.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition"
                   >
-                    <MessageCircle className="h-3.5 w-3.5" />
+                    <MessageCircle className="h-4 w-4" />
                     Écrivez-nous sur WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="group rounded-2xl border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)] transition hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]">
+              <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary text-white shadow-md transition group-hover:scale-105">
+                  <Mail className="h-5 w-5" strokeWidth={2} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-foreground">Email</p>
+                  <a
+                    href={`mailto:${BRAND.email}`}
+                    className="mt-1 block text-base font-medium text-primary underline-offset-4 hover:underline break-all"
+                  >
+                    {BRAND.email}
                   </a>
                 </div>
               </div>
@@ -68,8 +86,8 @@ export function Contact() {
             {/* Horaires */}
             <div className="group rounded-2xl border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)] transition hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]">
               <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--gradient-rose)] text-primary-foreground shadow-[var(--shadow-soft)] transition group-hover:scale-105">
-                  <Clock className="h-5 w-5" strokeWidth={2.2} />
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary text-white shadow-md transition group-hover:scale-105">
+                  <Clock className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-foreground">Horaires</p>

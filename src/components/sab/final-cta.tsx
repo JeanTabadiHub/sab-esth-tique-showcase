@@ -4,7 +4,7 @@ export function FinalCTA() {
   const { setOpen } = useBooking();
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
-      <div className="relative overflow-hidden rounded-3xl bg-[var(--gradient-prune)] px-6 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-16 sm:py-20">
+      <div className="relative overflow-hidden rounded-3xl border border-pink-300/30 bg-[var(--gradient-prune)] px-6 py-14 text-center shadow-[0_0_40px_-8px_rgba(219,112,147,0.18)] sm:px-16 sm:py-20">
         <div className="absolute inset-0 opacity-20 mix-blend-overlay">
           <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white blur-3xl" />
           <div className="absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-white blur-3xl" />

@@ -61,7 +61,7 @@ export function Reviews() {
 
         <div className="mt-10 text-center">
           <a
-            href={BRAND.mapsUrl}
+            href={BRAND.reviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"

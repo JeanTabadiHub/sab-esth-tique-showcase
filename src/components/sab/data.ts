@@ -3,10 +3,13 @@ export const BRAND = {
   phone: "91 49 46 50",
   phoneHref: "tel:+22891494650",
   whatsapp: "https://wa.me/22891494650",
+  email: "sabesthetiquesalon@gmail.com",
   address:
     "Hedzranawoé, boulevard du Haho, dans l'angle rue de l'immeuble le CROUSTILLANT, Lomé, Togo",
   mapsUrl:
     "https://www.google.com/maps/place/Sab'+Esth%C3%A9tique/@6.1758144,1.2383426,17z/data=!3m1!4b1!4m6!3m5!1s0x1023e3cbb8b84cf9:0x85ebd396c08c68ca!8m2!3d6.1758144!4d1.2409175!16s%2Fg%2F11gnrlxxwg",
+  reviewsUrl:
+    "https://www.google.com/maps/place/Sab'+Esth%C3%A9tique/@6.1758144,1.2383426,17z/data=!4m8!3m7!1s0x1023e3cbb8b84cf9:0x85ebd396c08c68ca!8m2!3d6.1758144!4d1.2409175!9m1!1b1!16s%2Fg%2F11gnrlxxwg?entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D",
   instagram: "https://www.instagram.com/sabesthetique_/",
   tiktok: "https://www.tiktok.com/@sab_esthetique",
   facebook: "https://web.facebook.com/sabesthetique.coif",

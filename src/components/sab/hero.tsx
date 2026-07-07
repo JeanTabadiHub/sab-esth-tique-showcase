@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
-import logo from "@/assets/sab-logo.png.asset.json";
+import logo from "@/assets/logo.png";
 import { useBooking } from "./booking-context";
 import { BRAND } from "./data";
 
@@ -36,7 +36,7 @@ export function Hero() {
         >
           <div className="mb-6 flex items-center gap-3 sm:mb-8">
             <img
-              src={logo.url}
+              src={logo}
               alt="Sab' Esthétique"
               className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20"
             />

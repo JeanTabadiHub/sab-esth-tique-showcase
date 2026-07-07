@@ -6,7 +6,7 @@ import { CalendarIcon, ChevronsUpDown } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { SERVICES } from "./data";
+import { SERVICES, BRAND } from "./data";
 
 export function BookingForm({ onDone }: { onDone?: () => void }) {
   const [submitting, setSubmitting] = useState(false);
@@ -34,14 +34,40 @@ export function BookingForm({ onDone }: { onDone?: () => void }) {
       toast.error(dateError);
       return;
     }
+
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const name = data.get("name") as string;
+    const phone = data.get("phone") as string;
+    const service = data.get("service") as string;
+    const slot = data.get("slot") as string;
+    const message = data.get("message") as string;
+
+    const dateStr = format(date, "d MMMM yyyy", { locale: fr });
+    const slotLabel = slot === "matin" ? "Matin (9h–13h)" : "Après-midi (13h–19h)";
+
+    const whatsappText = [
+      `Bonjour Sab' Esthétique, j'espère que vous allez bien.`,
+      `Je souhaite prendre un rendez-vous pour une prestation de ${service.toLowerCase()}.`,
+      `Je m'appelle ${name} et vous pouvez me joindre au ${phone}.`,
+      `Je souhaiterais un rendez-vous le ${dateStr}, de préférence ${slot === "matin" ? "dans la matinée, entre 9 h et 13 h" : "dans l'après-midi, entre 13 h et 19 h"}.`,
+      ...(message ? [`${message}`] : []),
+      `Merci d'avance pour votre retour !`,
+    ].join(" ");
+
+    const whatsappUrl = `${BRAND.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
+
     setSubmitting(true);
+
+    // Short delay for visual feedback, then open WhatsApp
     setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Merci ! Nous vous recontactons rapidement.");
-      (e.target as HTMLFormElement).reset();
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      toast.success("Votre demande a été envoyée via WhatsApp !");
+      form.reset();
       setDate(undefined);
+      setSubmitting(false);
       onDone?.();
-    }, 700);
+    }, 400);
   };
 
   const inputCls =
@@ -112,7 +138,7 @@ export function BookingForm({ onDone }: { onDone?: () => void }) {
             <PopoverContent
               align="start"
               sideOffset={8}
-              className="w-[calc(100vw-2rem)] max-w-[340px] rounded-2xl border-border/60 bg-card p-0 shadow-[var(--shadow-elegant)]"
+              className="z-[200] w-[calc(100vw-2rem)] max-w-[340px] rounded-2xl border-border/60 bg-card p-0 shadow-[var(--shadow-elegant)]"
             >
               <Calendar
                 mode="single"
@@ -161,11 +187,9 @@ export function BookingForm({ onDone }: { onDone?: () => void }) {
         disabled={submitting}
         className="group inline-flex w-full min-h-[52px] items-center justify-center rounded-lg bg-primary px-6 text-base font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition hover:bg-primary-glow disabled:opacity-60"
       >
-        {submitting ? "Envoi..." : "Envoyer ma demande"}
+        {submitting ? "Envoi..." : "Réserver sur WhatsApp"}
       </button>
-      <p className="text-center text-xs text-muted-foreground">
-        Vous pouvez aussi nous joindre directement sur WhatsApp au 91 49 46 50.
-      </p>
+
     </form>
   );
 }
