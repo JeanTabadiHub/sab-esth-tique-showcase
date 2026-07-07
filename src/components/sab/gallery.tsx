@@ -3,16 +3,13 @@ import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
 
-// À REMPLACER : photos réelles du salon fournies par la cliente
 const IMAGES = [
-  { src: g1, alt: "Manucure nude glossy", span: "row-span-2" },
-  { src: g2, alt: "Extensions de cils", span: "" },
-  { src: g3, alt: "Pédicure soignée", span: "" },
-  { src: g4, alt: "Station de maquillage", span: "" },
-  { src: g5, alt: "Sourcils microblading", span: "row-span-2" },
-  { src: g6, alt: "Ambiance soin & bien-être", span: "" },
+  { src: g1, alt: "Soin du visage — traitement professionnel", span: "row-span-2" },
+  { src: g2, alt: "Nail art coloré — french manucure multicolore", span: "" },
+  { src: g3, alt: "Soin du visage — application par éponges", span: "" },
+  { src: g4, alt: "French manucure — ongles aux couleurs pastel", span: "row-span-2" },
+  { src: g5, alt: "L'espace onglerie du salon Sab' Esthétique", span: "" },
 ];
 
 export function Gallery() {

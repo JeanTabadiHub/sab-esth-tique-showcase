@@ -51,8 +51,8 @@ export function BookingForm({ onDone }: { onDone?: () => void }) {
       `Je souhaite prendre un rendez-vous pour une prestation de ${service.toLowerCase()}.`,
       `Je m'appelle ${name} et vous pouvez me joindre au ${phone}.`,
       `Je souhaiterais un rendez-vous le ${dateStr}, de préférence ${slot === "matin" ? "dans la matinée, entre 9 h et 13 h" : "dans l'après-midi, entre 13 h et 19 h"}.`,
-      ...(message ? [`${message}`] : []),
       `Merci d'avance pour votre retour !`,
+      ...(message.trim() ? [`\n⚠️ : ${message.trim()}`] : []),
     ].join(" ");
 
     const whatsappUrl = `${BRAND.whatsapp}?text=${encodeURIComponent(whatsappText)}`;
